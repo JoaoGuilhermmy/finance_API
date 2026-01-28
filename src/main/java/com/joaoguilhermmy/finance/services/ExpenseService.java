@@ -24,4 +24,8 @@ public class ExpenseService {
         Optional<Expense> obj = repository.findById(id);
         return obj.orElseThrow(() -> new ResourceNotFoundExcpetion(id));
     }
+
+    public Expense insert(Expense obj) {
+        return repository.save(obj);
+    }
 }
