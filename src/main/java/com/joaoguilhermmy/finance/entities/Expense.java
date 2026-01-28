@@ -3,12 +3,16 @@ package com.joaoguilhermmy.finance.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import org.apache.catalina.User;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,14 +28,20 @@ public class Expense implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant date;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Expense() {
     }
 
-    public Expense(Integer id, String description, Double price, Instant date) {
+    public Expense(Integer id, String description, Double price, Instant date, User user) {
+        super();
         this.id = id;
         this.description = description;
         this.price = price;
         this.date = date;
+        this.user = user;
     }
 
     public Integer getId() {
@@ -64,6 +74,14 @@ public class Expense implements Serializable {
 
     public void setDate(Instant date) {
         this.date = date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
