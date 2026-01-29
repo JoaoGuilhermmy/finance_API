@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.joaoguilhermmy.finance.entities.Expense;
 import com.joaoguilhermmy.finance.entities.User;
 import com.joaoguilhermmy.finance.repositories.UserRepository;
 import com.joaoguilhermmy.finance.services.exception.DatabaseExcepition;
@@ -38,4 +39,9 @@ public class UserService {
             throw new DatabaseExcepition(e.getMessage());
         }
     }
+
+    public User insert(User obj) {
+        return repository.save(obj);
+    }
+
 }
