@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.joaoguilhermmy.finance.entities.Expense;
 import com.joaoguilhermmy.finance.entities.User;
+import com.joaoguilhermmy.finance.services.ExpenseService;
 import com.joaoguilhermmy.finance.services.UserService;
 
 @RestController
@@ -24,6 +26,9 @@ public class UserResource {
 
     @Autowired
     private UserService service;
+
+    @Autowired
+    private ExpenseService expenseService;
 
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
@@ -54,5 +59,11 @@ public class UserResource {
     public ResponseEntity<User> update(@PathVariable Integer id, @RequestBody User user) {
         user = service.update(id, user);
         return ResponseEntity.ok().body(user);
+    }
+
+    @GetMapping(value = "/{id}/expenses")
+    public ResponseEntity<List<Expense>> findExpensesByUser(@PathVariable Integer id) {
+        List<Expense> list = expenseService.findByUser(id);
+        return ResponseEntity.ok().body(list);
     }
 }

@@ -61,4 +61,8 @@ public class ExpenseService {
         entity.setDate(expense.getDate());
     }
 
+    public List<Expense> findByUser(Integer userId) {
+        return repository.findByUser_Id(userId);
+    }
+
 }
