@@ -3,8 +3,6 @@ package com.joaoguilhermmy.finance.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
-import org.apache.catalina.User;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
@@ -16,7 +14,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "despesas")
+@Table(name = "expenses")
 public class Expense implements Serializable {
     private static final long serialVersionUID = 1L;
 

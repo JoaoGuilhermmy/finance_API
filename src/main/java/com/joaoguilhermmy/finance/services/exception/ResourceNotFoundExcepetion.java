@@ -1,7 +1,7 @@
 package com.joaoguilhermmy.finance.services.exception;
 
-public class ResourceNotFoundExcpetion extends RuntimeException {
-    public ResourceNotFoundExcpetion(Object id) {
+public class ResourceNotFoundExcepetion extends RuntimeException {
+    public ResourceNotFoundExcepetion(Object id) {
         super("Resource not found id: " + id);
     }
 }

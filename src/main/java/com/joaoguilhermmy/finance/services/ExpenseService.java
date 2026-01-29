@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.joaoguilhermmy.finance.entities.Expense;
 import com.joaoguilhermmy.finance.repositories.ExpenseRepository;
-import com.joaoguilhermmy.finance.services.exception.DatabaseExcpition;
-import com.joaoguilhermmy.finance.services.exception.ResourceNotFoundExcpetion;
+import com.joaoguilhermmy.finance.services.exception.DatabaseExcepition;
+import com.joaoguilhermmy.finance.services.exception.ResourceNotFoundExcepetion;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -26,7 +26,7 @@ public class ExpenseService {
 
     public Expense findById(Integer id) {
         Optional<Expense> obj = repository.findById(id);
-        return obj.orElseThrow(() -> new ResourceNotFoundExcpetion(id));
+        return obj.orElseThrow(() -> new ResourceNotFoundExcepetion(id));
     }
 
     public Expense insert(Expense obj) {
@@ -35,13 +35,13 @@ public class ExpenseService {
 
     public void delete(Integer id) {
         if (!repository.existsById(id)) {
-            throw new ResourceNotFoundExcpetion(id);
+            throw new ResourceNotFoundExcepetion(id);
         }
 
         try {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
-            throw new DatabaseExcpition(e.getMessage());
+            throw new DatabaseExcepition(e.getMessage());
         }
     }
 
@@ -51,7 +51,7 @@ public class ExpenseService {
             updateData(entity, expense);
             return repository.save(entity);
         } catch (EntityNotFoundException e) {
-            throw new ResourceNotFoundExcpetion(id);
+            throw new ResourceNotFoundExcepetion(id);
         }
     }
 

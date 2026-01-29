@@ -1,9 +1,9 @@
 package com.joaoguilhermmy.finance.services.exception;
 
-public class DatabaseExcpition extends RuntimeException {
+public class DatabaseExcepition extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    public DatabaseExcpition(String msg) {
+    public DatabaseExcepition(String msg) {
         super(msg);
     }
 }
