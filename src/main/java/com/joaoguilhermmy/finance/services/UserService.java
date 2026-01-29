@@ -1,14 +1,14 @@
 package com.joaoguilhermmy.finance.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.joaoguilhermmy.finance.entities.User;
 import com.joaoguilhermmy.finance.repositories.UserRepository;
-
-import jakarta.websocket.server.ServerEndpoint;
+import com.joaoguilhermmy.finance.services.exception.ResourceNotFoundExcepetion;
 
 @Service
 public class UserService {
@@ -18,5 +18,10 @@ public class UserService {
 
     public List<User> findAll() {
         return repository.findAll();
+    }
+
+    public User findById(Integer id) {
+        Optional<User> obj = repository.findById(id);
+        return obj.orElseThrow(() -> new ResourceNotFoundExcepetion(id));
     }
 }
