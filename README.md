@@ -4,11 +4,12 @@
 
 ### _Plataforma de Gestão Financeira com Tecnologias Bleeding Edge_
 
-[![Java](https://img.shields.io/badge/Java-21_Latest_Features-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Java](https://img.shields.io/badge/Java-25_Latest_Features-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.2-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Railway](https://img.shields.io/badge/Railway-Deployed-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![Swagger](https://img.shields.io/badge/OpenAPI-3.0-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://swagger.io/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://choosealicense.com/licenses/mit/)
 
 <br>
 
@@ -16,7 +17,7 @@
 
 <br>
 
-_API RESTful de alta performance para gerenciamento de finanças pessoais, construída com as tecnologias mais modernas do ecossistema Java._
+_API RESTful de alta performance para gerenciamento de finanças pessoais, construída com o que há de mais recente no ecossistema Java (2026)._
 
 </div>
 
@@ -24,12 +25,12 @@ _API RESTful de alta performance para gerenciamento de finanças pessoais, const
 
 ## 📢 Sobre o Projeto
 
-Este projeto **explora o poder do ecossistema Java moderno** (Java 21 + Spring Boot 4.0.2), demonstrando **alta performance, código limpo e arquitetura escalável**. Não se trata apenas de um CRUD básico — é uma **plataforma completa** que exemplifica as melhores práticas de desenvolvimento backend em 2026.
+Este projeto **explora o poder do ecossistema Java moderno** (Java 25 + Spring Boot 4.0.2), demonstrando **alta performance, código limpo e arquitetura escalável**. Desenvolvido com **o que há de mais recente no ecossistema Java em 2026**, este não é apenas um CRUD básico — é uma **plataforma completa** que exemplifica as melhores práticas de desenvolvimento backend.
 
 ### 🎯 Diferenciais Técnicos
 
-- ⚡ **Java 21**: Aproveitando as features mais recentes da linguagem (Virtual Threads, Record Patterns, Sequenced Collections)
-- 🚀 **Spring Boot 4.0.2**: Framework de última geração com otimizações de performance e suporte nativo às novidades do Java 21+
+- ⚡ **Java 25 (Latest Features)**: Aproveitando as funcionalidades mais recentes da linguagem, incluindo Virtual Threads, Record Patterns, Sequenced Collections e Structured Concurrency
+- 🚀 **Spring Boot 4.0.2**: Framework de última geração com otimizações de performance e suporte nativo às novidades do Java 25
 - 🏗️ **Arquitetura em Camadas**: Separação clara de responsabilidades (Presentation → Business → Data Access)
 - 🔒 **Exception Handling Robusto**: Tratamento centralizado com `@ControllerAdvice` e respostas padronizadas
 - 📊 **Persistência Multi-Ambiente**: PostgreSQL 16 em produção, H2 in-memory para testes
@@ -51,14 +52,14 @@ Este projeto **explora o poder do ecossistema Java moderno** (Java 21 + Spring B
 </thead>
 <tbody>
 <tr>
-<td><img src="https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white" /></td>
-<td><b>21 (LTS)</b></td>
-<td>Linguagem base com Virtual Threads, Record Patterns, Sequenced Collections e Pattern Matching for switch</td>
+<td><img src="https://img.shields.io/badge/Java-25-ED8B00?logo=openjdk&logoColor=white" /></td>
+<td><b>25 (Latest)</b></td>
+<td>Linguagem base com Virtual Threads, Record Patterns, Sequenced Collections, Structured Concurrency e as features mais modernas de 2026</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Spring_Boot-4.0.2-6DB33F?logo=spring-boot&logoColor=white" /></td>
 <td><b>4.0.2</b></td>
-<td>Framework moderno com <b>melhorias de performance</b>, suporte nativo ao Java 21+ e Spring Framework 6.2</td>
+<td>Framework moderno com <b>melhorias de performance</b>, suporte nativo ao Java 25 e Spring Framework 6.2</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Spring_Data_JPA-4.0-6DB33F?logo=spring&logoColor=white" /></td>
@@ -98,7 +99,7 @@ Este projeto **explora o poder do ecossistema Java moderno** (Java 21 + Spring B
 </tbody>
 </table>
 
-> 💡 **Por que Spring Boot 4?** Esta versão traz melhorias significativas de performance, redução no tempo de startup, suporte nativo às Virtual Threads do Java 21, e integração otimizada com o ecossistema moderno de observabilidade.
+> 💡 **Por que Java 25 + Spring Boot 4?** Esta combinação traz melhorias significativas de performance, redução no tempo de startup, suporte nativo às Virtual Threads e Structured Concurrency do Java 25, e integração otimizada com o ecossistema moderno de observabilidade.
 
 ---
 
@@ -108,22 +109,23 @@ Este projeto **explora o poder do ecossistema Java moderno** (Java 21 + Spring B
 
 ```mermaid
 graph TD
-    A[Cliente HTTP/REST] -->|Requisição| B[Controllers Layer]
-    B -->|Validação & DTOs| C[Services Layer]
-    C -->|Regras de Negócio| D[Repositories Layer]
-    D -->|JPA/Hibernate| E[(PostgreSQL 16)]
+    A[Cliente HTTP/REST] -->|Requisição JSON| B[Controllers Layer]
+    B -->|Validação de Entrada| C[Services Layer]
+    C -->|Lógica de Negócio| D[Repositories Layer]
+    D -->|JPA/Hibernate ORM| E[(PostgreSQL 16 - Railway)]
     
-    B -->|Exception| F[Exception Handler]
+    B -->|Exception Lançada| F[Exception Handler]
     F -->|StandardError JSON| A
     
-    C -->|Transactions| D
+    C -->|@Transactional| D
+    E -->|Dados Persistidos| D
     
-    style A fill:#e1f5ff,stroke:#0077cc,stroke-width:2px
-    style B fill:#ffe1e1,stroke:#cc0000,stroke-width:2px
-    style C fill:#fff4e1,stroke:#cc8800,stroke-width:2px
-    style D fill:#e1ffe1,stroke:#00cc00,stroke-width:2px
-    style E fill:#f0e1ff,stroke:#8800cc,stroke-width:2px
-    style F fill:#ffe1f5,stroke:#cc0077,stroke-width:2px
+    style A fill:#e1f5ff,stroke:#0077cc,stroke-width:3px
+    style B fill:#ffe1e1,stroke:#cc0000,stroke-width:3px
+    style C fill:#fff4e1,stroke:#cc8800,stroke-width:3px
+    style D fill:#e1ffe1,stroke:#00cc00,stroke-width:3px
+    style E fill:#f0e1ff,stroke:#8800cc,stroke-width:3px
+    style F fill:#ffe1f5,stroke:#cc0077,stroke-width:3px
 ```
 
 ### Camadas da Aplicação
@@ -174,7 +176,7 @@ graph TD
 ```json
 {
   "name": "João Dev",
-  "email": "joao.dev@email.com"
+  "email": "joao@tech.com"
 }
 ```
 
@@ -183,7 +185,7 @@ graph TD
 {
   "id": 1,
   "name": "João Dev",
-  "email": "joao.dev@email.com"
+  "email": "joao@tech.com"
 }
 ```
 
@@ -202,8 +204,8 @@ Location: https://financeapi-production-cc70.up.railway.app/users/1
 **Request Body:**
 ```json
 {
-  "description": "Almoço Executivo - Restaurante",
-  "price": 85.50,
+  "description": "Almoço Executivo - Restaurante Italiano",
+  "price": 125.50,
   "date": "2026-01-30T12:30:00Z",
   "user": {
     "id": 1
@@ -215,15 +217,20 @@ Location: https://financeapi-production-cc70.up.railway.app/users/1
 ```json
 {
   "id": 1,
-  "description": "Almoço Executivo - Restaurante",
-  "price": 85.50,
+  "description": "Almoço Executivo - Restaurante Italiano",
+  "price": 125.50,
   "date": "2026-01-30T12:30:00Z",
   "user": {
     "id": 1,
     "name": "João Dev",
-    "email": "joao.dev@email.com"
+    "email": "joao@tech.com"
   }
 }
+```
+
+**Response Header:**
+```
+Location: https://financeapi-production-cc70.up.railway.app/expenses/1
 ```
 
 </details>
@@ -236,8 +243,8 @@ Location: https://financeapi-production-cc70.up.railway.app/users/1
 **Request Body:**
 ```json
 {
-  "description": "Almoço Executivo - Atualizado",
-  "price": 92.00,
+  "description": "Almoço Executivo - Valor Atualizado",
+  "price": 135.00,
   "date": "2026-01-30T13:00:00Z"
 }
 ```
@@ -246,13 +253,13 @@ Location: https://financeapi-production-cc70.up.railway.app/users/1
 ```json
 {
   "id": 1,
-  "description": "Almoço Executivo - Atualizado",
-  "price": 92.00,
+  "description": "Almoço Executivo - Valor Atualizado",
+  "price": 135.00,
   "date": "2026-01-30T13:00:00Z",
   "user": {
     "id": 1,
     "name": "João Dev",
-    "email": "joao.dev@email.com"
+    "email": "joao@tech.com"
   }
 }
 ```
@@ -270,23 +277,34 @@ Location: https://financeapi-production-cc70.up.railway.app/users/1
   {
     "id": 1,
     "description": "Almoço Executivo",
-    "price": 85.50,
+    "price": 125.50,
     "date": "2026-01-30T12:30:00Z",
     "user": {
       "id": 1,
       "name": "João Dev",
-      "email": "joao.dev@email.com"
+      "email": "joao@tech.com"
     }
   },
   {
     "id": 2,
-    "description": "Uber - Casa → Trabalho",
-    "price": 25.00,
+    "description": "Uber - Casa → Escritório",
+    "price": 28.00,
     "date": "2026-01-30T08:15:00Z",
     "user": {
       "id": 1,
       "name": "João Dev",
-      "email": "joao.dev@email.com"
+      "email": "joao@tech.com"
+    }
+  },
+  {
+    "id": 3,
+    "description": "Café da Manhã - Padaria",
+    "price": 15.50,
+    "date": "2026-01-30T07:45:00Z",
+    "user": {
+      "id": 1,
+      "name": "João Dev",
+      "email": "joao@tech.com"
     }
   }
 ]
@@ -323,7 +341,7 @@ GET /users/9999
 
 ### Pré-requisitos
 
-- ☕ **Java 21** ou superior ([Download OpenJDK](https://adoptium.net/))
+- ☕ **Java 25** ou superior ([Download OpenJDK](https://openjdk.org/projects/jdk/25/))
 - 📦 **Maven 3.9+** (ou use o wrapper incluído: `./mvnw`)
 - 🐳 **Docker** (opcional, para containerização)
 - 🐘 **PostgreSQL 16** (para ambiente de produção local)
@@ -464,7 +482,7 @@ A aplicação está atualmente **hospedada na Railway**, uma plataforma moderna 
 
 | Configuração | Valor |
 |--------------|-------|
-| **Runtime** | Java 21 (OpenJDK) |
+| **Runtime** | Java 25 (OpenJDK) |
 | **Build Command** | `mvn clean package -DskipTests` |
 | **Start Command** | `java -jar target/finance-api-0.0.1-SNAPSHOT.jar` |
 | **Port** | 8080 (detectado automaticamente) |
@@ -582,6 +600,7 @@ finance_API/
 ├── .mvn/                                      # Maven Wrapper
 ├── pom.xml                                    # Dependências Maven
 ├── .gitignore                                 # Arquivos ignorados pelo Git
+├── LICENSE                                    # Licença MIT
 └── README.md                                  # Documentação do projeto
 ```
 
@@ -605,7 +624,7 @@ finance_API/
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins **educacionais e de portfólio**.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
@@ -613,6 +632,6 @@ Este projeto foi desenvolvido para fins **educacionais e de portfólio**.
 
 **⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!**
 
-Desenvolvido com ☕ e 💻 por [João Guilhermmy](https://github.com/JoaoGuilhermmy)
+Desenvolvido com ☕ e ❤️ por **João Guilhermmy**
 
 </div>
