@@ -112,12 +112,12 @@ graph TD
     A[Cliente HTTP/REST] -->|Requisição JSON| B[Controllers Layer]
     B -->|Validação de Entrada| C[Services Layer]
     C -->|Lógica de Negócio| D[Repositories Layer]
-    D -->|JPA/Hibernate ORM| E[(PostgreSQL 16 - Railway)]
+    D -->|JPA/Hibernate ORM| E[PostgreSQL 16 - Railway]
     
     B -->|Exception Lançada| F[Exception Handler]
     F -->|StandardError JSON| A
     
-    C -->|@Transactional| D
+    C -->|Transactional| D
     E -->|Dados Persistidos| D
     
     style A fill:#e1f5ff,stroke:#0077cc,stroke-width:3px
