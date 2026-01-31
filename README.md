@@ -2,12 +2,11 @@
 
 # 💰 Finance API
 
-### _Plataforma de Gestão Financeira Pessoal de Alta Performance_
+### _Plataforma de Gestão Financeira com Tecnologias Bleeding Edge_
 
 [![Java](https://img.shields.io/badge/Java-21_Latest_Features-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.2-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Railway](https://img.shields.io/badge/Railway-Deployed-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![Swagger](https://img.shields.io/badge/OpenAPI-3.0-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://swagger.io/)
 
@@ -17,7 +16,7 @@
 
 <br>
 
-_API RESTful completa para gerenciamento de despesas pessoais, desenvolvida com arquitetura em camadas e deploy automatizado em produção._
+_API RESTful de alta performance para gerenciamento de finanças pessoais, construída com as tecnologias mais modernas do ecossistema Java._
 
 </div>
 
@@ -25,17 +24,18 @@ _API RESTful completa para gerenciamento de despesas pessoais, desenvolvida com 
 
 ## 📢 Sobre o Projeto
 
-**Finance API** é uma solução robusta e escalável para gestão financeira pessoal, construída com as melhores práticas da engenharia de software moderna. Este não é apenas mais um CRUD — é uma **plataforma completa** que demonstra domínio de arquitetura, persistência de dados e deploy em nuvem.
+Este projeto **explora o poder do ecossistema Java moderno** (Java 21 + Spring Boot 4.0.2), demonstrando **alta performance, código limpo e arquitetura escalável**. Não se trata apenas de um CRUD básico — é uma **plataforma completa** que exemplifica as melhores práticas de desenvolvimento backend em 2026.
 
-### ✨ Principais Características
+### 🎯 Diferenciais Técnicos
 
-- 🏗️ **Arquitetura em Camadas**: Separação clara entre Controllers, Services e Repositories
-- 🔒 **Validação Robusta**: Tratamento de exceções personalizado e respostas padronizadas
-- 📊 **Persistência Confiável**: PostgreSQL em produção (Railway) e H2 para testes
-- 🚀 **CI/CD Automatizado**: Deploy contínuo na Railway
-- 📚 **Documentação Interativa**: Swagger/OpenAPI 3.0 integrado
-- 🔗 **Relacionamentos JPA**: Modelagem de dados com entidades relacionadas (User ↔ Expense)
-- ⚡ **Performance**: Spring Boot 4 com otimizações de última geração
+- ⚡ **Java 21**: Aproveitando as features mais recentes da linguagem (Virtual Threads, Record Patterns, Sequenced Collections)
+- 🚀 **Spring Boot 4.0.2**: Framework de última geração com otimizações de performance e suporte nativo às novidades do Java 21+
+- 🏗️ **Arquitetura em Camadas**: Separação clara de responsabilidades (Presentation → Business → Data Access)
+- 🔒 **Exception Handling Robusto**: Tratamento centralizado com `@ControllerAdvice` e respostas padronizadas
+- 📊 **Persistência Multi-Ambiente**: PostgreSQL 16 em produção, H2 in-memory para testes
+- 🔗 **Relacionamentos JPA**: Modelagem de dados com entidades relacionadas bidirecionalmente
+- 📚 **Documentação OpenAPI 3.0**: Interface Swagger interativa para testes em tempo real
+- ☁️ **CI/CD Automatizado**: Deploy contínuo na Railway com zero downtime
 
 ---
 
@@ -52,51 +52,53 @@ _API RESTful completa para gerenciamento de despesas pessoais, desenvolvida com 
 <tbody>
 <tr>
 <td><img src="https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white" /></td>
-<td>21</td>
-<td>Linguagem principal com suporte a Records, Pattern Matching e Text Blocks</td>
+<td><b>21 (LTS)</b></td>
+<td>Linguagem base com Virtual Threads, Record Patterns, Sequenced Collections e Pattern Matching for switch</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Spring_Boot-4.0.2-6DB33F?logo=spring-boot&logoColor=white" /></td>
-<td>4.0.2</td>
-<td>Framework base para criação de APIs REST e injeção de dependências</td>
+<td><b>4.0.2</b></td>
+<td>Framework moderno com <b>melhorias de performance</b>, suporte nativo ao Java 21+ e Spring Framework 6.2</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Spring_Data_JPA-4.0-6DB33F?logo=spring&logoColor=white" /></td>
 <td>4.0.x</td>
-<td>Abstração de persistência e repositórios declarativos</td>
+<td>Abstração de persistência com repositórios declarativos e suporte a queries derivadas</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Hibernate-6.6-59666C?logo=hibernate&logoColor=white" /></td>
 <td>6.6.x</td>
-<td>ORM para mapeamento objeto-relacional</td>
+<td>ORM de alta performance com otimizações para Java moderno</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/PostgreSQL-16-316192?logo=postgresql&logoColor=white" /></td>
 <td>16</td>
-<td>Banco de dados relacional em produção (Railway)</td>
+<td>Banco de dados relacional em produção (Railway) com suporte a JSON, arrays e queries avançadas</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/H2_Database-2.2-00008B" /></td>
 <td>2.2.x</td>
-<td>Banco em memória para ambiente de testes (perfil test)</td>
+<td>Banco em memória para testes automatizados (perfil <code>test</code>)</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/SpringDoc_OpenAPI-2.8.5-85EA2D?logo=swagger&logoColor=black" /></td>
 <td>2.8.5</td>
-<td>Geração automática de documentação Swagger/OpenAPI 3.0</td>
+<td>Geração automática de documentação Swagger/OpenAPI 3.0 com anotações Jakarta</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Maven-3.9-C71A36?logo=apache-maven&logoColor=white" /></td>
 <td>3.9.12</td>
-<td>Gerenciamento de dependências e build automation</td>
+<td>Build automation e gerenciamento de dependências</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Railway-Cloud-0B0D0E?logo=railway&logoColor=white" /></td>
 <td>Latest</td>
-<td>Plataforma de deploy em nuvem com CI/CD integrado</td>
+<td>Plataforma PaaS com PostgreSQL gerenciado, CI/CD e HTTPS nativo</td>
 </tr>
 </tbody>
 </table>
+
+> 💡 **Por que Spring Boot 4?** Esta versão traz melhorias significativas de performance, redução no tempo de startup, suporte nativo às Virtual Threads do Java 21, e integração otimizada com o ecossistema moderno de observabilidade.
 
 ---
 
@@ -105,27 +107,34 @@ _API RESTful completa para gerenciamento de despesas pessoais, desenvolvida com 
 ### Diagrama de Fluxo
 
 ```mermaid
-graph LR
-    A[Cliente HTTP] -->|REST API| B[Controllers Layer]
-    B -->|Delega Lógica| C[Services Layer]
-    C -->|Acessa Dados| D[Repositories Layer]
-    D -->|JPA/Hibernate| E[(PostgreSQL - Railway)]
+graph TD
+    A[Cliente HTTP/REST] -->|Requisição| B[Controllers Layer]
+    B -->|Validação & DTOs| C[Services Layer]
+    C -->|Regras de Negócio| D[Repositories Layer]
+    D -->|JPA/Hibernate| E[(PostgreSQL 16)]
     
-    style A fill:#e1f5ff
-    style B fill:#ffe1e1
-    style C fill:#fff4e1
-    style D fill:#e1ffe1
-    style E fill:#f0e1ff
+    B -->|Exception| F[Exception Handler]
+    F -->|StandardError JSON| A
+    
+    C -->|Transactions| D
+    
+    style A fill:#e1f5ff,stroke:#0077cc,stroke-width:2px
+    style B fill:#ffe1e1,stroke:#cc0000,stroke-width:2px
+    style C fill:#fff4e1,stroke:#cc8800,stroke-width:2px
+    style D fill:#e1ffe1,stroke:#00cc00,stroke-width:2px
+    style E fill:#f0e1ff,stroke:#8800cc,stroke-width:2px
+    style F fill:#ffe1f5,stroke:#cc0077,stroke-width:2px
 ```
 
 ### Camadas da Aplicação
 
-| Camada | Responsabilidade | Tecnologia |
-|--------|------------------|------------|
-| **Presentation** | Receber requisições HTTP, validar entrada, retornar respostas | `@RestController`, `@RequestMapping` |
-| **Business Logic** | Processar regras de negócio, orquestrar operações | `@Service`, `@Transactional` |
-| **Data Access** | Abstração de persistência, queries customizadas | `@Repository`, Spring Data JPA |
-| **Domain Model** | Entidades de negócio e relacionamentos | `@Entity`, `@ManyToOne`, `@OneToMany` |
+| Camada | Responsabilidade | Principais Anotações |
+|--------|------------------|---------------------|
+| **Presentation** | Receber requisições HTTP, serializar/deserializar JSON, validar entrada | `@RestController`, `@RequestMapping`, `@GetMapping`, `@PostMapping` |
+| **Business Logic** | Processar regras de negócio, orquestrar transações, aplicar validações | `@Service`, `@Transactional` |
+| **Data Access** | Abstração de persistência, queries SQL/JPQL, gerenciamento de entidades | `@Repository`, `JpaRepository<T, ID>` |
+| **Domain Model** | Representar entidades de negócio e seus relacionamentos | `@Entity`, `@Table`, `@ManyToOne`, `@OneToMany` |
+| **Exception Handling** | Capturar e tratar exceções de forma centralizada | `@ControllerAdvice`, `@ExceptionHandler` |
 
 ---
 
@@ -135,48 +144,174 @@ graph LR
 
 | Método | Endpoint | Descrição | Status Code |
 |--------|----------|-----------|-------------|
-| `GET` | `/users` | Lista todos os usuários | 200 OK |
-| `GET` | `/users/{id}` | Busca usuário por ID | 200 OK / 404 Not Found |
+| `GET` | `/users` | Lista todos os usuários cadastrados | 200 OK |
+| `GET` | `/users/{id}` | Busca usuário específico por ID | 200 OK / 404 Not Found |
 | `POST` | `/users` | Cria novo usuário | 201 Created |
-| `PUT` | `/users/{id}` | Atualiza usuário existente | 200 OK / 404 Not Found |
-| `DELETE` | `/users/{id}` | Remove usuário | 204 No Content / 404 Not Found |
-| `GET` | `/users/{id}/expenses` | Lista despesas do usuário | 200 OK / 404 Not Found |
+| `PUT` | `/users/{id}` | Atualiza dados de usuário existente | 200 OK / 404 Not Found |
+| `DELETE` | `/users/{id}` | Remove usuário (verifica integridade referencial) | 204 No Content / 400 Bad Request |
+| `GET` | `/users/{id}/expenses` | Lista todas as despesas de um usuário | 200 OK / 404 Not Found |
 
 ### 💳 Gerenciamento de Despesas (`/expenses`)
 
 | Método | Endpoint | Descrição | Status Code |
 |--------|----------|-----------|-------------|
-| `GET` | `/expenses` | Lista todas as despesas | 200 OK |
-| `GET` | `/expenses/{id}` | Busca despesa por ID | 200 OK / 404 Not Found |
+| `GET` | `/expenses` | Lista todas as despesas registradas | 200 OK |
+| `GET` | `/expenses/{id}` | Busca despesa específica por ID | 200 OK / 404 Not Found |
 | `POST` | `/expenses` | Registra nova despesa | 201 Created |
 | `PUT` | `/expenses/{id}` | Atualiza despesa existente | 200 OK / 404 Not Found |
 | `DELETE` | `/expenses/{id}` | Remove despesa | 204 No Content / 404 Not Found |
 
-### 📄 Exemplo de Payload
+---
+
+## 📄 Exemplos de Payloads JSON
+
+### Criar Novo Usuário
 
 <details>
-<summary><b>POST /expenses - Criar Despesa</b></summary>
+<summary><b>POST /users</b></summary>
 
+**Request Body:**
 ```json
 {
-  "description": "Aluguel Janeiro",
-  "price": 1200.00,
-  "date": "2026-01-05T10:00:00Z",
+  "name": "João Dev",
+  "email": "joao.dev@email.com"
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "id": 1,
+  "name": "João Dev",
+  "email": "joao.dev@email.com"
+}
+```
+
+**Response Header:**
+```
+Location: https://financeapi-production-cc70.up.railway.app/users/1
+```
+
+</details>
+
+### Registrar Nova Despesa
+
+<details>
+<summary><b>POST /expenses</b></summary>
+
+**Request Body:**
+```json
+{
+  "description": "Almoço Executivo - Restaurante",
+  "price": 85.50,
+  "date": "2026-01-30T12:30:00Z",
   "user": {
     "id": 1
   }
 }
 ```
 
-</details>
-
-<details>
-<summary><b>POST /users - Criar Usuário</b></summary>
-
+**Response (201 Created):**
 ```json
 {
-  "name": "Maria Silva",
-  "email": "maria@example.com"
+  "id": 1,
+  "description": "Almoço Executivo - Restaurante",
+  "price": 85.50,
+  "date": "2026-01-30T12:30:00Z",
+  "user": {
+    "id": 1,
+    "name": "João Dev",
+    "email": "joao.dev@email.com"
+  }
+}
+```
+
+</details>
+
+### Atualizar Despesa Existente
+
+<details>
+<summary><b>PUT /expenses/{id}</b></summary>
+
+**Request Body:**
+```json
+{
+  "description": "Almoço Executivo - Atualizado",
+  "price": 92.00,
+  "date": "2026-01-30T13:00:00Z"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "id": 1,
+  "description": "Almoço Executivo - Atualizado",
+  "price": 92.00,
+  "date": "2026-01-30T13:00:00Z",
+  "user": {
+    "id": 1,
+    "name": "João Dev",
+    "email": "joao.dev@email.com"
+  }
+}
+```
+
+</details>
+
+### Listar Despesas de um Usuário
+
+<details>
+<summary><b>GET /users/{id}/expenses</b></summary>
+
+**Response (200 OK):**
+```json
+[
+  {
+    "id": 1,
+    "description": "Almoço Executivo",
+    "price": 85.50,
+    "date": "2026-01-30T12:30:00Z",
+    "user": {
+      "id": 1,
+      "name": "João Dev",
+      "email": "joao.dev@email.com"
+    }
+  },
+  {
+    "id": 2,
+    "description": "Uber - Casa → Trabalho",
+    "price": 25.00,
+    "date": "2026-01-30T08:15:00Z",
+    "user": {
+      "id": 1,
+      "name": "João Dev",
+      "email": "joao.dev@email.com"
+    }
+  }
+]
+```
+
+</details>
+
+### Tratamento de Erros
+
+<details>
+<summary><b>Exemplo de Erro 404 - Recurso Não Encontrado</b></summary>
+
+**Request:**
+```
+GET /users/9999
+```
+
+**Response (404 Not Found):**
+```json
+{
+  "timestamp": "2026-01-30T15:45:30Z",
+  "status": 404,
+  "error": "Resource not found!",
+  "message": "Resource not found id: 9999",
+  "path": "/users/9999"
 }
 ```
 
@@ -188,10 +323,12 @@ graph LR
 
 ### Pré-requisitos
 
-- **Java 21** ou superior ([Download](https://adoptium.net/))
-- **Maven 3.9+** (ou use o wrapper incluído: `./mvnw`)
-- **Docker** (opcional, para containerização)
-- **PostgreSQL 16** (para ambiente de produção local)
+- ☕ **Java 21** ou superior ([Download OpenJDK](https://adoptium.net/))
+- 📦 **Maven 3.9+** (ou use o wrapper incluído: `./mvnw`)
+- 🐳 **Docker** (opcional, para containerização)
+- 🐘 **PostgreSQL 16** (para ambiente de produção local)
+
+---
 
 ### 🐳 Opção 1: Rodando com Docker (Recomendado)
 
@@ -201,21 +338,23 @@ git clone https://github.com/JoaoGuilhermmy/finance_API.git
 cd finance_API
 
 # Construa a imagem Docker
-docker build -t finance-api .
+docker build -t finance-api:latest .
 
-# Execute o container (PostgreSQL deve estar rodando)
+# Execute o container (configure as variáveis de ambiente)
 docker run -p 8080:8080 \
-  -e PGHOST=seu-host \
+  -e PGHOST=seu-postgresql-host \
   -e PGPORT=5432 \
   -e PGDATABASE=finance-db \
   -e PGUSER=seu-usuario \
-  -e PGPASSWORD=sua-senha \
-  finance-api
+  -e PGPASSWORD=sua-senha-segura \
+  finance-api:latest
 ```
+
+---
 
 ### ⚙️ Opção 2: Rodando com Maven (Desenvolvimento Local)
 
-#### Modo Teste (H2 Database em Memória)
+#### 🧪 Modo Teste (H2 Database em Memória)
 
 ```bash
 # Clone o repositório
@@ -226,12 +365,21 @@ cd finance_API
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=test
 
 # Acesse a aplicação
-# API: http://localhost:8080
-# H2 Console: http://localhost:8080/h2-console
-# Swagger: http://localhost:8080/swagger-ui/index.html
+# 🌐 API Base: http://localhost:8080
+# 🗄️ H2 Console: http://localhost:8080/h2-console
+# 📚 Swagger UI: http://localhost:8080/swagger-ui/index.html
 ```
 
-#### Modo Produção (PostgreSQL)
+**Configurações do H2 Console:**
+```
+JDBC URL: jdbc:h2:mem:testdb
+User Name: sa
+Password: (deixe em branco)
+```
+
+---
+
+#### 🚀 Modo Produção (PostgreSQL)
 
 ```bash
 # Configure as variáveis de ambiente
@@ -241,51 +389,87 @@ export PGDATABASE=finance-db
 export PGUSER=postgres
 export PGPASSWORD=sua-senha-segura
 
-# Execute a aplicação
+# Compile e execute a aplicação
+./mvnw clean package -DskipTests
 ./mvnw spring-boot:run
 
-# Acesse o Swagger
-# http://localhost:8080/swagger-ui/index.html
+# Acesse o Swagger UI
+# 📚 http://localhost:8080/swagger-ui/index.html
 ```
-
-### 🔐 Configuração de Variáveis de Ambiente
-
-Para rodar em produção local, crie um arquivo `.env` ou configure as seguintes variáveis:
-
-```bash
-PGHOST=seu-postgresql-host
-PGPORT=5432
-PGDATABASE=finance-db
-PGUSER=seu-usuario
-PGPASSWORD=sua-senha
-```
-
-> ⚠️ **Importante**: Nunca commite credenciais sensíveis no repositório. Use variáveis de ambiente ou serviços de gerenciamento de secrets.
 
 ---
 
-## ☁️ Deploy em Produção
+### 🔐 Configuração de Variáveis de Ambiente
 
-### Railway Platform
+Para rodar em produção local, configure as seguintes variáveis de ambiente:
 
-A aplicação está atualmente hospedada na **Railway**, uma plataforma moderna de deploy com as seguintes características:
+```bash
+# PostgreSQL Connection
+PGHOST=seu-postgresql-host          # Ex: localhost ou IP do servidor
+PGPORT=5432                          # Porta padrão do PostgreSQL
+PGDATABASE=finance-db                # Nome do banco de dados
+PGUSER=seu-usuario                   # Usuário do PostgreSQL
+PGPASSWORD=sua-senha-segura          # Senha do usuário
+```
 
-- ✅ **CI/CD Automatizado**: Deploy automático a cada push na branch `main`
-- ✅ **PostgreSQL Gerenciado**: Banco de dados provisionado automaticamente
-- ✅ **HTTPS Nativo**: Certificados SSL gerenciados pela plataforma
-- ✅ **Logs em Tempo Real**: Monitoramento completo da aplicação
-- ✅ **Rollback Instantâneo**: Versões anteriores sempre disponíveis
+**Método 1: Arquivo `.env` (recomendado para desenvolvimento)**
 
-**URL de Produção**: [https://financeapi-production-cc70.up.railway.app](https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html)
+Crie um arquivo `.env` na raiz do projeto:
 
-### Configurações do Railway
+```bash
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=finance-db
+PGUSER=postgres
+PGPASSWORD=SuaSenhaForte123!
+```
 
-O deploy está configurado com as seguintes especificações:
+**Método 2: Export direto no terminal**
 
-- **Runtime**: Java 21
-- **Build Command**: `mvn clean package -DskipTests`
-- **Start Command**: `java -jar target/finance-api-0.0.1-SNAPSHOT.jar`
-- **Healthcheck**: Endpoint `/actuator/health` (se habilitado)
+```bash
+export PGHOST=localhost
+export PGPORT=5432
+export PGDATABASE=finance-db
+export PGUSER=postgres
+export PGPASSWORD=SuaSenhaForte123!
+```
+
+> ⚠️ **Segurança Crítica**: 
+> - Nunca commite arquivos `.env` ou credenciais no Git
+> - Adicione `.env` ao `.gitignore`
+> - Use serviços de gerenciamento de secrets em produção (AWS Secrets Manager, HashiCorp Vault, etc.)
+
+---
+
+## ☁️ Deploy em Produção (Railway)
+
+A aplicação está atualmente **hospedada na Railway**, uma plataforma moderna de deploy com as seguintes características:
+
+### ✨ Features da Railway
+
+- ✅ **CI/CD Totalmente Automatizado**: Deploy automático a cada push na branch `main`
+- ✅ **PostgreSQL 16 Gerenciado**: Banco de dados provisionado e mantido automaticamente
+- ✅ **HTTPS Nativo**: Certificados SSL/TLS gerenciados pela plataforma
+- ✅ **Logs em Tempo Real**: Monitoramento completo via dashboard
+- ✅ **Rollback Instantâneo**: Voltar para versões anteriores com um clique
+- ✅ **Variáveis de Ambiente Seguras**: Gerenciamento de secrets integrado
+- ✅ **Auto-scaling**: Escala horizontal conforme demanda
+
+### 🌐 Acessar Aplicação em Produção
+
+**URL Base:** [https://financeapi-production-cc70.up.railway.app](https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html)  
+**Swagger UI:** [https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html](https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html)
+
+### ⚙️ Configurações do Deploy
+
+| Configuração | Valor |
+|--------------|-------|
+| **Runtime** | Java 21 (OpenJDK) |
+| **Build Command** | `mvn clean package -DskipTests` |
+| **Start Command** | `java -jar target/finance-api-0.0.1-SNAPSHOT.jar` |
+| **Port** | 8080 (detectado automaticamente) |
+| **Database** | PostgreSQL 16 (gerenciado) |
+| **Region** | US West |
 
 ---
 
@@ -295,37 +479,59 @@ O deploy está configurado com as seguintes especificações:
 # Executar todos os testes
 ./mvnw test
 
-# Executar com cobertura
+# Executar testes com relatório detalhado
+./mvnw test -Dtest=* --debug
+
+# Executar com cobertura (requer plugin JaCoCo)
 ./mvnw clean test jacoco:report
+
+# Relatório de cobertura em: target/site/jacoco/index.html
 ```
 
 ---
 
-## 📚 Documentação Interativa
+## 📚 Documentação Interativa (Swagger/OpenAPI)
 
 Toda a API está documentada com **Swagger/OpenAPI 3.0**. Acesse a interface interativa:
 
-- **Produção**: [https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html](https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html)
-- **Local**: `http://localhost:8080/swagger-ui/index.html`
+- **🌐 Produção**: [https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html](https://financeapi-production-cc70.up.railway.app/swagger-ui/index.html)
+- **💻 Local**: `http://localhost:8080/swagger-ui/index.html`
 
-Na interface Swagger você pode:
-- ✅ Visualizar todos os endpoints disponíveis
-- ✅ Testar requisições diretamente no navegador
-- ✅ Ver modelos de dados (schemas)
-- ✅ Consultar códigos de resposta HTTP
+### 🎯 Recursos do Swagger UI
+
+- ✅ Visualizar todos os endpoints disponíveis organizados por tags
+- ✅ Testar requisições HTTP diretamente no navegador
+- ✅ Ver schemas completos dos modelos de dados (DTOs/Entities)
+- ✅ Consultar códigos de resposta HTTP e exemplos
+- ✅ Autenticação integrada (quando habilitada)
+- ✅ Download da especificação OpenAPI em JSON/YAML
 
 ---
 
 ## 🛠️ Tecnologias e Padrões Aplicados
 
-- ✅ **REST API** com verbos HTTP semânticos
+### Arquitetura & Design Patterns
+
+- ✅ **Layered Architecture** (Presentation → Business → Data → Domain)
+- ✅ **Repository Pattern** via Spring Data JPA
+- ✅ **Dependency Injection** com inversão de controle (IoC)
+- ✅ **DTO Pattern** (implícito via entidades JPA serializáveis)
+
+### Boas Práticas de Código
+
+- ✅ **REST API** com verbos HTTP semânticos (GET, POST, PUT, DELETE)
+- ✅ **HTTP Status Codes** corretos para cada operação
+- ✅ **Exception Handling Centralizado** com `@ControllerAdvice`
+- ✅ **Validação de Dados** em múltiplas camadas
+- ✅ **Profiles do Spring** para ambientes (test, dev, prod)
+
+### Persistência & Banco de Dados
+
 - ✅ **JPA/Hibernate** para ORM
-- ✅ **DTOs implícitos** via entidades JPA
-- ✅ **Exception Handling** centralizado com `@ControllerAdvice`
-- ✅ **Profiles do Spring** (test, dev, prod)
-- ✅ **Relacionamentos bidirecionais** com `@JsonIgnore`
-- ✅ **Auto-incremento** de IDs com estratégia `AUTO`
+- ✅ **Relacionamentos bidirecionais** com `@JsonIgnore` para evitar loops
+- ✅ **Auto-incremento de IDs** com estratégia `GenerationType.AUTO`
 - ✅ **Timestamps ISO 8601** com `Instant` e `@JsonFormat`
+- ✅ **Transações gerenciadas** com `@Transactional`
 
 ---
 
@@ -333,22 +539,50 @@ Na interface Swagger você pode:
 
 ```
 finance_API/
+│
 ├── src/
 │   ├── main/
 │   │   ├── java/com/joaoguilhermmy/finance/
-│   │   │   ├── config/           # Configurações (OpenAPI, perfis)
-│   │   │   ├── entities/         # Modelos de domínio (User, Expense)
-│   │   │   ├── repositories/     # Interfaces JPA
-│   │   │   ├── resources/        # Controllers REST
-│   │   │   ├── services/         # Lógica de negócio
-│   │   │   └── PersonalFinanceApiApplication.java
+│   │   │   ├── config/                        # Configurações da aplicação
+│   │   │   │   ├── OpenApiConfig.java         # Configuração Swagger/OpenAPI
+│   │   │   │   └── TesteConfig.java           # Seed de dados para testes
+│   │   │   │
+│   │   │   ├── entities/                      # Modelos de domínio (JPA Entities)
+│   │   │   │   ├── User.java                  # Entidade Usuário
+│   │   │   │   └── Expense.java               # Entidade Despesa
+│   │   │   │
+│   │   │   ├── repositories/                  # Camada de acesso a dados
+│   │   │   │   ├── UserRepository.java        # Repositório de Usuários
+│   │   │   │   └── ExpenseRepository.java     # Repositório de Despesas
+│   │   │   │
+│   │   │   ├── services/                      # Lógica de negócio
+│   │   │   │   ├── UserService.java           # Serviço de Usuários
+│   │   │   │   ├── ExpenseService.java        # Serviço de Despesas
+│   │   │   │   └── exception/                 # Exceções customizadas
+│   │   │   │       ├── ResourceNotFoundExcepetion.java
+│   │   │   │       └── DatabaseExcepition.java
+│   │   │   │
+│   │   │   ├── resources/                     # Controllers REST
+│   │   │   │   ├── UserResource.java          # Endpoints de Usuários
+│   │   │   │   ├── ExpenseResource.java       # Endpoints de Despesas
+│   │   │   │   └── exception/                 # Exception Handlers
+│   │   │   │       ├── ResourceExceptionHandler.java
+│   │   │   │       └── StandardError.java
+│   │   │   │
+│   │   │   └── PersonalFinanceApiApplication.java  # Classe principal
+│   │   │
 │   │   └── resources/
-│   │       ├── application.properties          # Config produção
-│   │       └── application-test.properties     # Config testes
+│   │       ├── application.properties              # Configuração produção
+│   │       └── application-test.properties         # Configuração testes
+│   │
 │   └── test/
-│       └── java/                 # Testes unitários
-├── pom.xml                       # Dependências Maven
-└── README.md
+│       └── java/com/joaoguilhermmy/finance/
+│           └── PersonalFinanceApiApplicationTests.java
+│
+├── .mvn/                                      # Maven Wrapper
+├── pom.xml                                    # Dependências Maven
+├── .gitignore                                 # Arquivos ignorados pelo Git
+└── README.md                                  # Documentação do projeto
 ```
 
 ---
@@ -371,13 +605,13 @@ finance_API/
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins educacionais e de portfólio.
+Este projeto foi desenvolvido para fins **educacionais e de portfólio**.
 
 ---
 
 <div align="center">
 
-**⭐ Se este projeto foi útil, considere dar uma estrela no repositório!**
+**⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!**
 
 Desenvolvido com ☕ e 💻 por [João Guilhermmy](https://github.com/JoaoGuilhermmy)
 
