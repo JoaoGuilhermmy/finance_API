@@ -140,6 +140,50 @@ graph TD
 
 ---
 
+## 🔗 Data Model and Relationships
+
+### Entity-Relationship Diagram
+
+```mermaid
+erDiagram
+    USER ||--o{ EXPENSE : "owns (user_id)"
+    
+    USER {
+        Long id PK
+        String name
+        String email
+    }
+    
+    EXPENSE {
+        Long id PK
+        String description
+        Double price
+        Instant date
+        Long user_id FK
+    }
+```
+
+### 🔄 Implemented Relationships
+
+#### **User → Expense** (OneToMany bidirectional)
+```java
+// User.java
+@OneToMany(mappedBy = "user")
+@JsonIgnore  // Prevents circular reference
+private List<Expense> expenses = new ArrayList<>();
+
+// Expense.java
+@ManyToOne
+@JoinColumn(name = "user_id")
+private User user;
+```
+- **Cardinality**: One user can have N expenses
+- **Navigation**: Bidirectional with `@JsonIgnore` to avoid infinite loops in JSON serialization
+- **Cascade**: Not configured (expenses are managed independently)
+- **Integrity**: User cannot be deleted if there are associated expenses
+
+---
+
 ## 🔌 API Endpoints
 
 ### 👤 User Management (`/users`)
@@ -330,6 +374,28 @@ GET /users/9999
   "error": "Resource not found!",
   "message": "Resource not found id: 9999",
   "path": "/users/9999"
+}
+```
+
+</details>
+
+<details>
+<summary><b>Example 400 Error - Integrity Violation</b></summary>
+
+**Request:**
+```
+DELETE /users/1
+```
+(User has associated expenses)
+
+**Response (400 Bad Request):**
+```json
+{
+  "timestamp": "2026-01-30T15:50:12Z",
+  "status": 400,
+  "error": "Database error!",
+  "message": "Integrity constraint violation - cannot delete user with associated expenses",
+  "path": "/users/1"
 }
 ```
 
@@ -606,18 +672,84 @@ finance_API/
 
 ---
 
+## 🎓 Advanced Concepts Applied
+
+### Enterprise Exception Handling
+
+```java
+@ControllerAdvice
+public class ResourceExceptionHandler {
+    
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<StandardError> resourceNotFound(
+        ResourceNotFoundException e, HttpServletRequest request) {
+        
+        String error = "Resource not found!";
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(
+            Instant.now(), 
+            status.value(), 
+            error, 
+            e.getMessage(), 
+            request.getRequestURI()
+        );
+        return ResponseEntity.status(status).body(err);
+    }
+    
+    @ExceptionHandler(DatabaseException.class)
+    public ResponseEntity<StandardError> database(
+        DatabaseException e, HttpServletRequest request) {
+        
+        String error = "Database error!";
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        StandardError err = new StandardError(
+            Instant.now(), 
+            status.value(), 
+            error, 
+            e.getMessage(), 
+            request.getRequestURI()
+        );
+        return ResponseEntity.status(status).body(err);
+    }
+}
+```
+
+### Referential Integrity Validation
+
+```java
+public void delete(Long id) {
+    if (!repository.existsById(id)) {
+        throw new ResourceNotFoundException(id);
+    }
+    try {
+        repository.deleteById(id);
+    } catch (DataIntegrityViolationException e) {
+        throw new DatabaseException(
+            "Integrity constraint violation - cannot delete user with associated expenses"
+        );
+    }
+}
+```
+
+---
+
 ## 🤝 Author & Contact
 
 <div align="center">
-
-### João Guilhermmy
-
-**Backend Developer | Java & Spring Specialist**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-João_Guilhermmy-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-guilhermmy-93661b29b)
-[![Email](https://img.shields.io/badge/Email-joaoguilhermmy2@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joaoguilhermmy2@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-JoaoGuilhermmy-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JoaoGuilhermmy)
-
+  <img src="https://github.com/JoaoGuilhermmy.png" width="150px" style="border-radius: 50%;" alt="João Guilhermmy"/>
+  
+  ### João Guilhermmy
+  
+  💼 **Backend Developer | Java**
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-guilhermmy-93661b29b)
+  [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joaoguilhermmy2@gmail.com)
+  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JoaoGuilhermmy)
+  
+  📧 **Email:** joaoguilhermmy2@gmail.com  
+  🔗 **LinkedIn:** [linkedin.com/in/joão-guilhermmy-93661b29b](https://www.linkedin.com/in/joão-guilhermmy-93661b29b)  
+  💻 **GitHub:** [github.com/JoaoGuilhermmy](https://github.com/JoaoGuilhermmy)
+  
 </div>
 
 ---
@@ -633,5 +765,8 @@ This project is under the MIT License. See the [LICENSE](LICENSE) file for more 
 **⭐ If you found this project helpful, please consider giving it a star!**
 
 Developed with ☕ and ❤️ by **João Guilhermmy**
+
+![Spring Boot](https://img.shields.io/badge/Made%20with-Spring%20Boot-6DB33F?style=flat-square&logo=spring-boot)
+![Java](https://img.shields.io/badge/Powered%20by-Java-ED8B00?style=flat-square&logo=openjdk)
 
 </div>
